@@ -15,3 +15,9 @@
         - A 1 cell value goes to 0 if less than two or greater than three neighbors are 1 valued.
         - A 0 cell value goes to 1 if exactly three neighbors are 1 valued.
         - A 0 cell value stays 0 if less than three or greater than three neighbors are 1 valued
+
+## Updates for the concurrency
+- All `Cell` objects are now controller by `CellThread` objects
+- The rule logic moved into `CellThread` objects as they are the ones that responsible from it
+- Introduced a simple `CountingSemaphore` implementation.
+- Introduced `Barrier` class. It is synchronizing the threads by using 3 `CountingSemaphore` implementation. A more in-depth explanation of how it works can be found in the file itself

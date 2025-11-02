@@ -55,4 +55,12 @@ public class Grid {
         }
         return true;
     }
+
+    public void clearGrid() {
+        for (int i = 0; i < rowCount; i++) {
+            for (int j = 0; j < colCount; j++) {
+                grid[i][j] = new Cell(0);
+            }
+        }
+    }
 }

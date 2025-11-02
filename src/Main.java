@@ -1,7 +1,10 @@
-import java.io.IOException;
+// Erdem Tuzla
+// 2024700114
+// erdem.tuzla@std.bogazici.edu.tr
+// CMPE436-Assignment 2
 
-import utility.InputReader;
-import components.Grid;
+import java.io.IOException;
+import utility.file.InputReader;
 import logic.GenerationProcessor;
 
 public class Main {
@@ -16,20 +19,15 @@ public class Main {
         try {
             InputReader reader = new InputReader(args[0]);
 
-            // Set grid size
+            // Read file and get required data for initialization
             int[] gridSize = reader.readGridSize();
             int generationCount = reader.readGenerationCount();
 
-            // Create the processor and give required generation count data
-            GenerationProcessor processor = new GenerationProcessor(
-                    new Grid(gridSize[0], gridSize[1], true),
-                    generationCount);
+            GenerationProcessor processor = new GenerationProcessor(gridSize, generationCount);
 
             processor.process();
-
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
-
     }
 }

@@ -1,4 +1,4 @@
-package utility;
+package utility.helpers;
 
 public enum NeighborOffset {
     UP(-1, 0),
